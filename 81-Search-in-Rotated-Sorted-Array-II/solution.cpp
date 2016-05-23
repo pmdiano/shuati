@@ -1,3 +1,7 @@
+/**
+ * This explanation is pretty good:
+ * http://blog.csdn.net/linhuanmars/article/details/20588511
+ */
 class Solution {
 public:
     bool search(vector<int>& nums, int target) {
