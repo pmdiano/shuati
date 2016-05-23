@@ -1,3 +1,6 @@
+/**
+ * This is my own solution. Not as good as the other one.
+ */
 class Solution {
 public:
     int findMin(vector<int>& nums) {

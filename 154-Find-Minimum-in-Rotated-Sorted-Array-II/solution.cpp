@@ -1,3 +1,6 @@
+/**
+ * http://blog.csdn.net/linhuanmars/article/details/40449299
+ */
 class Solution {
 public:
     int findMin(vector<int>& nums) {

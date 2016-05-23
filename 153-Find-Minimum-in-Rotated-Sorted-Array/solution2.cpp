@@ -1,3 +1,6 @@
+/**
+ * http://blog.csdn.net/linhuanmars/article/details/40449295
+ */
 class Solution {
 public:
     int findMin(vector<int>& nums) {
@@ -19,7 +22,8 @@ public:
                 minVal = min(minVal, nums[mid]);
                 end = mid - 1;
             } else {
-                --start;
+                // This will never happen
+                ++start;
             }
         }
 
