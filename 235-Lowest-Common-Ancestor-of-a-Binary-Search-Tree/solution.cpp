@@ -15,13 +15,12 @@ public:
         }
 
         while (root) {
-            if ((p->val <= root->val && q->val >= root->val) || (p->val >= root->val && q->val <= root->val)) {
-                return root;
-            }
-            if (p->val <= root->val && q->val <= root->val) {
+            if (max(p->val, q->val) < root->val) {
                 root = root->left;
-            } else {
+            } else if (min(p->val, q->val) > root->val) {
                 root = root->right;
+            } else {
+                return root;
             }
         }
 
