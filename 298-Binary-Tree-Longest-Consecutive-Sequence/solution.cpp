@@ -8,27 +8,15 @@
  * };
  */
 class Solution {
-    void dfs(TreeNode* root, unordered_map<TreeNode*, int>& hash, int& longest) {
-        if (root->left) {
-            if (root->left->val == root->val + 1) {
-                hash[root->left] = hash[root] + 1;
-                longest = max(longest, hash[root->left]);
-            } else {
-                hash[root->left] = 1;
-            }
+    void dfs(TreeNode* root, int current, int& longest) {
+        longest = max(longest, current);
 
-            dfs(root->left, hash, longest);
+        if (root->left) {
+            dfs(root->left, root->left->val == root->val+1 ? current+1 : 1, longest);
         }
 
         if (root->right) {
-            if (root->right->val == root->val + 1) {
-                hash[root->right] = hash[root] + 1;
-                longest = max(longest, hash[root->right]);
-            } else {
-                hash[root->right] = 1;
-            }
-
-            dfs(root->right, hash, longest);
+            dfs(root->right, root->right->val == root->val+1 ? current+1 : 1, longest);
         }
     }
 
@@ -38,11 +26,8 @@ public:
             return 0;
         }
 
-        unordered_map<TreeNode*, int> hash;
-        hash[root] = 1;
         int longest = 1;
-
-        dfs(root, hash, longest);
+        dfs(root, 1, longest);
 
         return longest;
     }
