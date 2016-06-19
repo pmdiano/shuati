@@ -10,6 +10,8 @@
 class Solution {
 public:
     void recoverTree(TreeNode* root) {
+        // Note this is not O(1) space, this is still O(N) space.
+        // O(1) space solution needs to use threaded binary tree.
         TreeNode *node1 = nullptr, *node2 = nullptr;
         TreeNode *dummy = new TreeNode(numeric_limits<int>::min());
         TreeNode *prev = dummy;
