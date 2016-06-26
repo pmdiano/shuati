@@ -13,26 +13,25 @@ public:
             return head;
         }
 
-        ListNode *dummy = new ListNode(0);
-        dummy->next = head;
-        ListNode *prev = dummy;
-        ListNode *tail = head;
-
+        ListNode *prev = head, *tail = head;
         while (n--) {
             tail = tail->next;
         }
-        while (tail) {
+
+        if (!tail) {
+            // remove head
+            ListNode *node = head->next;
+            delete head;
+            return node;
+        }
+
+        while (tail->next) {
             tail = tail->next;
             prev = prev->next;
         }
-
         ListNode *node = prev->next;
-        prev->next = node->next;
-
-        head = dummy->next;
-        delete dummy;
+        prev->next = prev->next->next;
         delete node;
-
         return head;
     }
 };
