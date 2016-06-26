@@ -23,7 +23,7 @@ public:
                 while (node && node->val == val) {
                     ListNode* tmp = node->next;
                     delete node;
-                    node = node->next;
+                    node = tmp;
                 }
                 prev->next = node;
             }
