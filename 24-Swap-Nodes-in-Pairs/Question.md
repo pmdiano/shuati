@@ -1,0 +1,28 @@
+# 24. Swap Nodes in Pairs
+
+[Original Page](https://leetcode.com/problems/swap-nodes-in-pairs/)
+
+Given a linked list, swap every two adjacent nodes and return its head.
+
+For example,  
+Given `1->2->3->4`, you should return the list as `2->1->4->3`.
+
+Your algorithm should use only constant space. You may **not** modify the values in the list, only nodes itself can be changed.
+
+<div>
+
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+
+<span class="hidebutton" style="display: none;">[Microsoft](/company/microsoft/) [Bloomberg](/company/bloomberg/) [Uber](/company/uber/)</span></div>
+
+<div>
+
+<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+
+<span class="hidebutton" style="display: none;">[Linked List](/tag/linked-list/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+
+<span class="hidebutton">[(H) Reverse Nodes in k-Group](/problems/reverse-nodes-in-k-group/)</span></div>
