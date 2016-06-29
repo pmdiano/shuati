@@ -26,22 +26,20 @@ public:
 
         head = reverse(head);
 
-        ListNode* p = head;
-        int carry = 0;
-        if (++p->val == 10) {
-            p->val = 0;
-            carry = 1;
-        }
+        int carry = 1;
+        ListNode *p = head, *prev = nullptr;
 
-        while (p->next && carry) {
-            p = p->next;
+        while (p && carry) {
             int sum = p->val + carry;
             p->val = sum % 10;
             carry = sum / 10;
+
+            prev = p;
+            p = p->next;
         }
 
         if (carry) {
-            p->next = new ListNode(carry);
+            prev->next = new ListNode(carry);
         }
 
         return reverse(head);
