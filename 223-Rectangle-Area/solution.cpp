@@ -7,28 +7,8 @@ public:
         int overlap = 0;
         if (!(C <= E || G <= A)) { // x overlaps
             if (!(D <= F || H <= B)) { // y overlaps
-                int overlap_x = 0, overlap_y = 0;
-
-                if (E <= A && G <= C) {
-                    overlap_x = G - A;
-                } else if (E <= A && G >= C) {
-                    overlap_x = C - A;
-                } else if (A <= E && G <= C) {
-                    overlap_x = G - E;
-                } else if (A <= E && G >= C) {
-                    overlap_x = C - E;
-                }
-
-                if (F <= B && H <= D) {
-                    overlap_y = H - B;
-                } else if (F <= B && H >= D) {
-                    overlap_y = D - B;
-                } else if (B <= F && H <= D) {
-                    overlap_y = H - F;
-                } else if (B <= F && H >= D) {
-                    overlap_y = D - F;
-                }
-
+                int overlap_x = min(C, G) - max(A, E);
+                int overlap_y = min(D, H) - max(B, F);
                 overlap = overlap_x * overlap_y;
             }
         }
