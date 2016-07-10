@@ -5,7 +5,7 @@ public:
             return 0;
         }
 
-        unordered_map<char, int> num;
+        int num[256] = {0};
         num['I'] = 1;
         num['V'] = 5;
         num['X'] = 10;
