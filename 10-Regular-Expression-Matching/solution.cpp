@@ -1,3 +1,7 @@
+/**
+ * Reference:
+ * http://bangbingsyb.blogspot.com/2014/11/leetcode-regular-expression-matching.html
+ */
 class Solution {
 public:
     bool isMatch(string s, string p) {
