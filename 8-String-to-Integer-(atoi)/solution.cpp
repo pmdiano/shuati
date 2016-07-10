@@ -15,12 +15,11 @@ public:
         int x = 0;
         while ('0' <= str[i] && str[i] <= '9') {
             int d = str[i] - '0';
-            int x2 = x * 10 + d;
-            if (x2 < 0 || (x2-d)/10 != x) {
+            if (x > INT_MAX/10 || (x == INT_MAX/10 && d > 7)) {
                 // Overflow
                 return negative ? INT_MIN : INT_MAX;
             }
-            x = x2;
+            x = x * 10 + d;
             i++;
         }
 
