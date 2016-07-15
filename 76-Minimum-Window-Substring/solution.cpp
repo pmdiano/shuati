@@ -27,11 +27,9 @@ public:
                 j++;
             }
 
-            if (windowSize == dictSize) {
-                if (i-j < len) {
-                    len = i-j;
-                    start = j;
-                }
+            if (windowSize == dictSize && i-j < len) {
+                len = i-j;
+                start = j;
             }
         }
 
