@@ -1,9 +1,9 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-        string result;
+        int len = INT_MAX, start;
         if (s.empty() || t.empty()) {
-            return result;
+            return "";
         }
 
         vector<int> dict(256, 0);
@@ -28,13 +28,17 @@ public:
             }
 
             if (windowSize == dictSize) {
-                string str = s.substr(j, i-j);
-                if (result == "" || str.length() < result.length()) {
-                    result = str;
+                if (i-j < len) {
+                    len = i-j;
+                    start = j;
                 }
             }
         }
 
-        return result;
+        if (len == INT_MAX) {
+            return "";
+        } else {
+            return s.substr(start, len);
+        }
     }
 };
