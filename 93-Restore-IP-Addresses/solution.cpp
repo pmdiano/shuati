@@ -8,18 +8,23 @@ class Solution {
             return;
         }
 
-        int n = 4 - bytes.length();
+        int n = 4 - bytes.size();
         int len = s.length() - pos;
         if (len < n || len > n*3) {
             return;
         }
 
         for (int i = pos+1; i <= pos+3 && i <= s.length(); i++) {
-            if (i < pos+3 || s[pos] <= '2' || s[pos+1] <= '4' || (s[pos+1] == '5' && s[pos+2] <= '5')) {
-                bytes.push_back(s.substr(pos, i-pos));
-                search(s, i, bytes, result);
-                bytes.pop_back();
+            if (s[pos] == '0' && i > pos+1) {
+                return;
             }
+            if (i == pos+3 && atoi(s.substr(pos, 3).c_str()) >= 256) {
+                return;
+            }
+
+            bytes.push_back(s.substr(pos, i-pos));
+            search(s, i, bytes, result);
+            bytes.pop_back();
         }
     }
 
