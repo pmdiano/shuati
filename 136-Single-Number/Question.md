@@ -11,13 +11,13 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Palantir](/company/palantir/) [Airbnb](/company/airbnb/)</span></div>
+<span class="hidebutton" style="display: none;">[Palantir](/company/palantir/) [Airbnb](/company/airbnb/)</span></div>
 
 <div>
 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton">[Hash Table](/tag/hash-table/) [Bit Manipulation](/tag/bit-manipulation/)</span></div>
+<span class="hidebutton" style="display: none;">[Hash Table](/tag/hash-table/) [Bit Manipulation](/tag/bit-manipulation/)</span></div>
 
 <div>
 
