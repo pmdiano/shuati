@@ -1,14 +1,16 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int one = 0, two = 0;
-        for (int x : nums) {
-            two |= (one & x);
-            one ^= x;
-            int three = two & one;
-            two &= ~three;
-            one &= ~three;
+        int ans = 0;
+        for (int mask = 1; mask; mask <<= 1) {
+            int bit = 0;
+            for (int& x : nums) {
+                if (x & mask) bit++;
+            }
+            if (bit % 3) {
+                ans |= mask;
+            }
         }
-        return one;
+        return ans;
     }
 };
