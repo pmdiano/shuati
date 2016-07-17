@@ -19,6 +19,8 @@ public:
             }
         }
 
+        // If this is true, only possible situation is their length differ by 1,
+        // and that the last character of the longer is missing from the shorter.
         if (i<m || j<n) edit = true;
 
         return edit;
