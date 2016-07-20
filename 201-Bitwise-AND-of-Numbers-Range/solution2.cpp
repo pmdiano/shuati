@@ -1,12 +1,12 @@
 class Solution {
 public:
     int rangeBitwiseAnd(int m, int n) {
-        int ans = 0;
-        for (int mask = 1; mask && mask <= n; mask <<= 1) {
-            if (n-m+1 <= mask && m & mask && n & mask) {
-                ans |= mask;
-            }
+        int i = 0;
+        while (m != n) {
+            m >>= 1;
+            n >>= 1;
+            i++;
         }
-        return ans;
+        return m << i;
     }
 };
