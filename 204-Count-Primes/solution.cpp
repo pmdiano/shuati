@@ -2,8 +2,8 @@ class Solution {
 public:
     int countPrimes(int n) {
         if (n <= 1) return 0;
-        vector<int> isPrime(n, 1);
         int upper = sqrt((float)n);
+        vector<int> isPrime(n, 1);
 
         for (int i = 2; i <= upper; i++) {
             if (!isPrime[i]) continue;
