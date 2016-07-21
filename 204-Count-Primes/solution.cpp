@@ -2,13 +2,13 @@ class Solution {
 public:
     int countPrimes(int n) {
         if (n <= 1) return 0;
-        vector<bool> isPrime(n, true);
+        vector<int> isPrime(n, 1);
         int upper = sqrt((float)n);
 
         for (int i = 2; i <= upper; i++) {
             if (!isPrime[i]) continue;
             for (int j = i * i; j < n; j+=i) {
-                isPrime[j] = false;
+                isPrime[j] = 0;
             }
         }
 
