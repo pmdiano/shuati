@@ -3,8 +3,9 @@ public:
     int countPrimes(int n) {
         if (n <= 1) return 0;
         vector<bool> isPrime(n, true);
+        int upper = sqrt((float)n);
 
-        for (int i = 2; i < sqrt((float)n); i++) {
+        for (int i = 2; i <= upper; i++) {
             if (!isPrime[i]) continue;
             for (int j = i * i; j < n; j+=i) {
                 isPrime[j] = false;
