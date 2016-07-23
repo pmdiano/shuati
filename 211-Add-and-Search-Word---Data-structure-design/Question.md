@@ -26,22 +26,22 @@ You may assume that all words are consist of lowercase letters `a-z`.
 
 [click to show hint.](#)
 
-<div class="spoilers" style="display: none;">You should be familiar with how a Trie works. If not, please work on this problem: [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) first.</div>
+<div class="spoilers" style="display: block;">You should be familiar with how a Trie works. If not, please work on this problem: [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) first.</div>
 
 <div>
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Facebook](/company/facebook/)</span></div>
+<span class="hidebutton" style="display: none;">[Facebook](/company/facebook/)</span></div>
 
 <div>
 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton">[Backtracking](/tag/backtracking/) [Trie](/tag/trie/) [Design](/tag/design/)</span></div>
+<span class="hidebutton" style="display: none;">[Backtracking](/tag/backtracking/) [Trie](/tag/trie/) [Design](/tag/design/)</span></div>
 
 <div>
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(M) Implement Trie (Prefix Tree)](/problems/implement-trie-prefix-tree/)</span></div>
+<span class="hidebutton" style="display: none;">[(M) Implement Trie (Prefix Tree)](/problems/implement-trie-prefix-tree/)</span></div>
