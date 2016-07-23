@@ -7,8 +7,8 @@ public:
         vector<vector<int>> edge(n);
 
         for (auto& p : prerequisites) {
-            edge[p.first].push_back(p.second);
-            indegree[p.second]++;
+            edge[p.second].push_back(p.first);
+            indegree[p.first]++;
         }
 
         stack<int> stk;
