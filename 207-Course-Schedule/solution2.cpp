@@ -21,7 +21,7 @@ public:
         vector<int> visited(n, 0);
 
         for (auto& p : prerequisites) {
-            edges[p.first].push_back(p.second);
+            edges[p.second].push_back(p.first);
         }
 
         for (int i = 0; i < n; i++) {
