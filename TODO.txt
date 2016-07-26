@@ -5,6 +5,7 @@ Verify preoerder sequence in BST, including constant space complexity
 Wildcard matching, greedy
 Trapping rain water, using stack
 Jump game II, greedy
+248 stro*, use counting
 Ternary Search Tree & Trie
 tiny url on AWS
 crawler for zhihu users
