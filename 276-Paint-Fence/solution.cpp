@@ -1,4 +1,5 @@
 class Solution {
+    // https://segmentfault.com/a/1190000003790650
 public:
     int numWays(int n, int k) {
         int dp[] = {0, k, k*k, 0};
