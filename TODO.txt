@@ -9,4 +9,5 @@ Jump game II, greedy
 Meeting rooms II, using heap
 Ternary Search Tree & Trie
 tiny url on AWS
-crawler for zhihu users
+crawler for MSN data
+game of life follow-up: https://segmentfault.com/a/1190000003819277
