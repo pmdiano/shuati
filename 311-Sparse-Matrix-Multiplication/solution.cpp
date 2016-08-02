@@ -1,8 +1,12 @@
 class Solution {
 public:
     vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B) {
+        if (A.empty() || B.empty() || A[0].empty() || B[0].empty()) {
+            return vector<vector<int>>();
+        }
+
         // key is row index, pair.first is col index, pair.second is value
-        unordered_map<int, vector<pair<int, int>>> hash;
+        vector<vector<pair<int, int>>> hash(B.size());
         for (int i = 0; i < B.size(); i++) {
             for (int j = 0; j < B[0].size(); j++) {
                 if (B[i][j] != 0) {
