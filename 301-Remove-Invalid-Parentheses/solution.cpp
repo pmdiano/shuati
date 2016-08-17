@@ -15,6 +15,15 @@ class Solution {
             return;
         }
 
+        if ((int)s.length() - pos < left) {
+            // Can never match parentheses
+            return;
+        }
+        if (maxLeft + ((int)s.length() - pos - left) / 2 < maxLen) {
+            // Cannot be at least maxLen
+            return;
+        }
+
         if (s[pos] == '(') {
             search(s, pos+1, current+"(", left+1, maxLeft+1);
             search(s, pos+1, current, left, maxLeft);
