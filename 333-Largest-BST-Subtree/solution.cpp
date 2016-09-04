@@ -26,15 +26,14 @@ class Solution {
         Result left = helper(root->left);
         Result right = helper(root->right);
 
-        if (left.isBst && right.isBst) {
-            if ((!root->left || left.maxVal < root->val) &&
-                (!root->right || right.minVal > root->val)) {
-                res.isBst = true;
-                res.minVal = root->left ? left.minVal : root->val;
-                res.maxVal = root->right ? right.maxVal : root->val;
-                res.maxBstNodes = left.maxBstNodes + right.maxBstNodes + 1;
-                return res;
-            }
+        if (left.isBst && right.isBst &&
+            (!root->left || left.maxVal < root->val) &&
+            (!root->right || right.minVal > root->val)) {
+            res.isBst = true;
+            res.minVal = root->left ? left.minVal : root->val;
+            res.maxVal = root->right ? right.maxVal : root->val;
+            res.maxBstNodes = left.maxBstNodes + right.maxBstNodes + 1;
+            return res;
         }
 
         res.isBst = false;
