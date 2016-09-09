@@ -44,16 +44,16 @@ Special thanks to [@elmirap](https://discuss.leetcode.com/user/elmirap) for addi
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: none;">[Dropbox](/company/dropbox/) [Google](/company/google/)</span></div>
+<span class="hidebutton">[Dropbox](/company/dropbox/) [Google](/company/google/)</span></div>
 
 <div>
 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton" style="display: none;">[Design](/tag/design/)</span></div>
+<span class="hidebutton">[Design](/tag/design/)</span></div>
 
 <div>
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton" style="display: none;">[(E) Logger Rate Limiter](/problems/logger-rate-limiter/)</span></div>
+<span class="hidebutton">[(E) Logger Rate Limiter](/problems/logger-rate-limiter/)</span></div>
