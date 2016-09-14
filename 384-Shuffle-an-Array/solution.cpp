@@ -13,7 +13,7 @@ public:
     /** Returns a random shuffling of the array. */
     vector<int> shuffle() {
         vector<int> shuffle = original;
-        for (int i = shuffle.size()-1, len = shuffle.size(); i >= 0; i--) {
+        for (int i = shuffle.size()-1, len = shuffle.size(); i >= 0; i--, len--) {
             int j = rand() % len;
             swap(shuffle[i], shuffle[j]);
         }
