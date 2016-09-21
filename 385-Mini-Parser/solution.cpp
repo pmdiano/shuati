@@ -44,8 +44,8 @@ class Solution {
 public:
     NestedInteger deserialize(string s) {
         int i = 0;
-        stack<NestedInteger> stk;
-        NestedInteger curr;
+        vector<NestedInteger> stk;
+        stk.push_back(NestedInteger());
         while (i < s.size()) {
             switch (s[i]) {
                 case ',':
@@ -53,25 +53,22 @@ public:
                     break;
 
                 case '[':
-                    stk.push(curr);
-                    curr = NestedInteger();
+                    stk.push_back(NestedInteger());
                     i++;
                     break;
 
                 case ']':
-                    stk.top().add(curr);
-                    curr = stk.top();
-                    stk.pop();
+                    stk[stk.size()-2].add(stk.back());
+                    stk.pop_back();
                     i++;
                     break;
 
                 default:
-                    NestedInteger val(getInt(s, i));
-                    curr.add(val);
+                    stk.back().add(NestedInteger(getInt(s, i)));
                     break;
             }
         }
 
-        return curr.getList()[0];
+        return stk.back().getList()[0];
     }
 };
