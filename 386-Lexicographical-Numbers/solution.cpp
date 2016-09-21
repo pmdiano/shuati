@@ -12,6 +12,7 @@ class Solution {
 public:
     vector<int> lexicalOrder(int n) {
         vector<int> res;
+        res.reserve(n);
         for (int i = 1; i <= 9; i++) {
             dfs(i, n, res);
         }
