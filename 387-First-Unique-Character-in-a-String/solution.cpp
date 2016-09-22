@@ -1,18 +1,11 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        vector<int> pos(26, -1);
-        vector<int> cnt(26, 0);
+        int cnt[26] = {0};
+        for (char c : s) cnt[c-'a']++;
         for (int i = 0; i < s.size(); i++) {
-            if (pos[s[i]-'a'] < 0) pos[s[i]-'a'] = i;
-            cnt[s[i]-'a']++;
+            if (cnt[s[i]-'a'] == 1) return i;
         }
-        int j = INT_MAX;
-        for (int i = 0; i < 26; i++) {
-            if (cnt[i] == 1 && pos[i] < j) {
-                j = pos[i];
-            }
-        }
-        return j == INT_MAX ? -1 : j;
+        return -1;
     }
 };
