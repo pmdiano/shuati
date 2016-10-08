@@ -9,9 +9,15 @@ public:
      * @return    The number of characters read
      */
     int read(char *buf, int n) {
+        char buf2[4];
         int total = 0, once = 4;
         while (total < n && once == 4) {
-            int once = min(read4(buf), n-total);
+            if (n-total >= 4) {
+                once = read4(buf);
+            } else {
+                once = min(read4(buf2), n-total);
+                memcpy(buf, buf2, once);
+            }
             buf += once;
             total += once;
         }
