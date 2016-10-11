@@ -1,19 +1,20 @@
 class Solution {
-public:
-    bool canPartition(vector<int>& nums) {
-        int sum = 0;
-        for (int x : nums) sum += x;
-        if (sum % 2) return false;
-        sum /= 2;
-
-        vector<int> dp(sum+1, 0);
-        dp[0] = 1;
-        for (int x : nums) {
-            for (int s = 0; s <= sum - x; s++) {
-                if (dp[s]) dp[s+x] = 1;
+    bool search(vector<int>& nums, int start, int target) {
+        if (target == 0) return true;
+        if (target < nums[start]) return false;
+        for (int i = start; i < nums.size(); i++) {
+            if (search(nums, i+1, target - nums[i])) {
+                return true;
             }
-            if (dp[sum]) return true;
         }
         return false;
+    }
+
+public:
+    bool canPartition(vector<int>& nums) {
+        int sum = accumulate(nums.begin(), nums.end(), 0);
+        if (sum & 1) return false;
+        sort(nums.begin(), nums.end());
+        return search(nums, 0, sum / 2);
     }
 };
