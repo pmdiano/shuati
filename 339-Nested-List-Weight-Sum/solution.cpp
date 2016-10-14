@@ -16,23 +16,26 @@
  * };
  */
 class Solution {
-    int dfs(NestedInteger& node, int depth) {
-        if (node.isInteger()) {
-            return node.getInteger() * depth;
-        }
-
-        int sum = 0;
-        for (auto child : node.getList()) {
-            sum += dfs(child, depth+1);
-        }
-        return sum;
-    }
 public:
     int depthSum(vector<NestedInteger>& nestedList) {
         int sum = 0;
-        for (auto node : nestedList) {
-            sum += dfs(node, 1);
+        stack<pair<const NestedInteger*, int>> s;
+        for (int i = nestedList.size() - 1; i >= 0; i--) {
+            s.push(make_pair(&nestedList[i], 1));
         }
+
+        while (!s.empty()) {
+            auto node = s.top(); s.pop();
+            if (node.first->isInteger()) {
+                sum += node.first->getInteger() * node.second;
+            } else {
+                const vector<NestedInteger>& list = node.first->getList();
+                for (int i = list.size() - 1; i >= 0; i--) {
+                    s.push(make_pair(&list[i], node.second + 1));
+                }
+            }
+        }
+
         return sum;
     }
 };
