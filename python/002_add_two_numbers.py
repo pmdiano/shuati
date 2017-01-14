@@ -11,9 +11,6 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        if not l1 and not l2:
-            return None
-
         root = n = ListNode(0)
         a = 0
 
