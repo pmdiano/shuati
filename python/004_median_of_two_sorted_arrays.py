@@ -30,4 +30,3 @@ class Solution(object):
             return self.kth(a[i:], b, k-i)
         else:
             return self.kth(a, b[j:], k-j)
-        
